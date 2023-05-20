@@ -18,10 +18,13 @@ const server = createServer(app);
 
 // to use the socket.io with the express server
 // we have given the second parameter as an object with cors property so that we can request from any origin
-const io = require("socket.io")(server, {
+const io = require("socket.io")({
   cors: {
-    origin: "*",
-  },
+    origin: 'https://webapp-frontend-iota.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['my-custom-header'],
+    credentials: true
+  }
 });
 
 // Middleware to enable CORS
