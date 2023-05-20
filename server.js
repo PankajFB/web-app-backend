@@ -22,7 +22,7 @@ const io = require("socket.io")({
   cors: {
     origin: '*',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['my-custom-header'],
+    allowedHeaders: ["Access-Control-Allow-Origin" ],
     credentials: true
   }
 });
