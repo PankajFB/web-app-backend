@@ -20,7 +20,7 @@ const server = createServer(app);
 // we have given the second parameter as an object with cors property so that we can request from any origin
 const io = require("socket.io")({
   cors: {
-    origin: 'https://webapp-frontend-iota.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST'],
     allowedHeaders: ['my-custom-header'],
     credentials: true
