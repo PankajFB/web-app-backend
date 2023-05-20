@@ -27,22 +27,19 @@ const io = require("socket.io")({
   }
 });
 
-app.get("/",(req,res)=>{
-  res.send("Hello from the server")
-})
 
-// Middleware to enable CORS
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*'); 
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+
 
 // starting the database connection
 connectDb();
 
 // enabling the cors
 app.use(cors());
+
+app.get("/",(req,res)=>{
+  res.send("Hello from the server")
+})
+
 
 // array to hold the connected users
 let connectedUsers = [];
