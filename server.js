@@ -27,6 +27,10 @@ const io = require("socket.io")({
   }
 });
 
+app.get("/",(req,res)=>{
+  res.send("Hello from the server")
+})
+
 // Middleware to enable CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://webapp-frontend-iota.vercel.app');
