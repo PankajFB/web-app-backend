@@ -18,7 +18,7 @@ const server = createServer(app);
 
 // to use the socket.io with the express server
 // we have given the second parameter as an object with cors property so that we can request from any origin
-const io = require("socket.io")({
+const io = require("socket.io")(http, {
   cors: {
     origin: "*"
   }
