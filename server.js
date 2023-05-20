@@ -20,10 +20,7 @@ const server = createServer(app);
 // we have given the second parameter as an object with cors property so that we can request from any origin
 const io = require("socket.io")({
   cors: {
-    origin: 'https://localhost:3000/',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ["Access-Control-Allow-Origin" ],
-    credentials: true
+    origin: "*"
   }
 });
 
